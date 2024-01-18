@@ -30,7 +30,6 @@ io.on('connection', (socket: Socket) => {
      console.log(error)
    }
 });
-console.log(io)
 
 server.listen(PORT, () => {
   console.log(`Listening to PORT ${PORT}`);
