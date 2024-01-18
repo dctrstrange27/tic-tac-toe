@@ -10,10 +10,10 @@ const PORT: number = parseInt(process.env.PORT || "5000", 10);
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin : "http://localhost:5173"}));
 
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server, { cors : { origin : "http://localhost:5173"}});
 
 io.on('connection', (socket: Socket) => {
   console.log('A user connected');
